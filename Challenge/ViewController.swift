@@ -7,13 +7,15 @@
 
 import UIKit
 
+import Foundation
+
+
 class ViewController: UIViewController {
 
+    let myClass = Movie()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        myClass.getData()
     }
-
-
 }
-
