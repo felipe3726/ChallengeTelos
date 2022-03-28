@@ -10,7 +10,7 @@ import Foundation
 
 class SeriesViewController: UIViewController {
 
-@IBOutlet var TopTableView: UITableView!
+    @IBOutlet var SerieTableView : UITableView!
 
 let user = User()
 let series = Serie()
@@ -19,8 +19,8 @@ var array : Array<Serie.TopSeries> = []
 override func viewDidLoad() {
     super.viewDidLoad()
     
-    TopTableView.delegate = self
-    TopTableView.dataSource = self
+    SerieTableView.delegate = self
+    SerieTableView.dataSource = self
     
     array = series.getData()
 }
@@ -37,7 +37,7 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    let cell = tableView.dequeueReusableCell(withIdentifier: "TopCell", for: indexPath) as! TopTableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "SeriesCell", for: indexPath) as! SeriesTableViewCell
 
     
     cell.rankCell.text = array[indexPath.row].Rank
