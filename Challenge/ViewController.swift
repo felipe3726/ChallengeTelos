@@ -11,7 +11,9 @@ import Foundation
 
 
 class ViewController: UIViewController {
+    
     @IBOutlet var tableView: UITableView!
+    
     let sections = [
     "Movies",
     "Series",
@@ -28,8 +30,17 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "TopViewSegue", sender: self)
-        print("Hello")
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        performSegue(withIdentifier: "TopViewSegue", sender: self)
+        print("hello")
+        
+        /*if indexPath.row == 0{
+            self.performSegue(withIdentifier: "TopViewSegue", sender: self)
+        }else if indexPath.row == 1{
+            self.performSegue(withIdentifier: "SeriesSegue", sender: self)
+        }*/
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +51,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         cell.labelCell.text = sections[indexPath.row]
         cell.imageCell.image = UIImage(named: sections[indexPath.row])
+        
         return cell
     }
     

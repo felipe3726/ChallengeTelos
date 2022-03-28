@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+
+public class User{
+    public var Rented: Array<String> = []
+    public var Favorite: Array<String> = []
+    
+    
+    public func addFav(_ String: String){
+        Favorite.append(String)
+    }
+}

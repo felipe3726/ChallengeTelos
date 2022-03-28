@@ -13,17 +13,13 @@ class TopViewController: UIViewController {
     @IBOutlet var TopTableView: UITableView!
     
     let movies = Movie()
-    let series = Serie()
     var array : Array<Movie.TopMovies> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         TopTableView.delegate = self
         TopTableView.dataSource = self
-        
         array = movies.getData()
-
     }
 }
 
@@ -40,7 +36,7 @@ extension TopViewController: UITableViewDelegate, UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopCell", for: indexPath) as! TopTableViewCell
 
-        
+        //cell.imageCell.image = UIImage(named: "Movies")
         cell.rankCell.text = array[indexPath.row].Rank
         cell.ratingCell.text = array[indexPath.row].IMDbRating
         cell.titleCell.text = array[indexPath.row].Title

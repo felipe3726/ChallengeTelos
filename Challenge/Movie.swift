@@ -35,8 +35,6 @@ public class Movie {
         }
     }
     
-
-    
     public func getData() -> Array<TopMovies>{
         let semaphore = DispatchSemaphore (value: 0)
         var model = [TopMovies]()
@@ -68,4 +66,41 @@ public class Movie {
         semaphore.wait()
         return model
     }
+    
+    public func Search(_ movie: String) -> (String, String){
+        
+        let semaphore = DispatchSemaphore (value: 0)
+        var title : String = ""
+        var image : String = ""
+        var request = URLRequest(url: URL(string: "https://imdb-api.com/API/Search/k_1jwwmt8u/" + movie)!,timeoutInterval: Double.infinity)
+        request.httpMethod = "GET"
+         
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+            print(String(describing: error))
+            return
+          }
+            do {
+                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+                let jsonDict = jsonResponse as! NSDictionary
+                let _ = jsonDict["errorMessage"] as! String
+                let _ = jsonDict["expression"] as! String
+                let items = jsonDict["results"] as! NSArray
+                let jsonArray = items as! [[String: Any]]
+                
+                title = jsonArray[0]["title"] as! String
+                image = jsonArray[0]["image"] as! String
+                
+                print(title, image)
+            } catch {
+                print(error.localizedDescription)
+            }
+          semaphore.signal()
+        }
+         
+        task.resume()
+        semaphore.wait()
+        return (title, image)
+    }
+    
 }
