@@ -1,15 +1,15 @@
 //
-//  Movie.swift
+//  Serie.swift
 //  Challenge
 //
-//  Created by Felipe Martinez on 24/03/22.
+//  Created by Felipe Martinez on 27/03/22.
 //
 
 import Foundation
 
-public class Movie {
+public class Serie{
     
-    public struct TopMovies{
+    public struct TopSeries{
         public var id:  String
         public var Rank:  String
         public var RankUpDown:  String
@@ -35,12 +35,10 @@ public class Movie {
         }
     }
     
-
-    
-    public func getData() -> Array<TopMovies>{
+    public func getData() -> Array<TopSeries>{
         let semaphore = DispatchSemaphore (value: 0)
-        var model = [TopMovies]()
-        var request = URLRequest(url: URL(string: "https://imdb-api.com/en/API/MostPopularMovies/k_1jwwmt8u")!,timeoutInterval: Double.infinity)
+        var model = [TopSeries]()
+        var request = URLRequest(url: URL(string: "https://imdb-api.com/en/API/MostPopularTVs/k_1jwwmt8u")!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
          
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -56,7 +54,7 @@ public class Movie {
                 let jsonArray = items as! [[String: Any]]
                 
                 for dic in jsonArray{
-                    model.append(TopMovies(dic))
+                    model.append(TopSeries(dic))
                 }
                 
             } catch {
@@ -68,4 +66,5 @@ public class Movie {
         semaphore.wait()
         return model
     }
+    
 }

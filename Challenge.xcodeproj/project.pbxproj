@@ -15,6 +15,11 @@
 		F1B2093D27EB68B800A8A954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B2093C27EB68B800A8A954 /* Assets.xcassets */; };
 		F1B2094027EB68B800A8A954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B2093E27EB68B800A8A954 /* LaunchScreen.storyboard */; };
 		F1B2094827ECF3A900A8A954 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2094727ECF3A900A8A954 /* Movie.swift */; };
+		F1B2094C27F12F0C00A8A954 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2094B27F12F0C00A8A954 /* TableViewCell.swift */; };
+		F1B2094E27F1454500A8A954 /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2094D27F1454500A8A954 /* Serie.swift */; };
+		F1B2095027F150CA00A8A954 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2094F27F150CA00A8A954 /* TopViewController.swift */; };
+		F1B2095227F151E800A8A954 /* TopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2095127F151E800A8A954 /* TopTableViewCell.swift */; };
+		F1B2095427F1E9D100A8A954 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2095327F1E9D100A8A954 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		F1B2093F27EB68B800A8A954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1B2094127EB68B800A8A954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1B2094727ECF3A900A8A954 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		F1B2094B27F12F0C00A8A954 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		F1B2094D27F1454500A8A954 /* Serie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serie.swift; sourceTree = "<group>"; };
+		F1B2094F27F150CA00A8A954 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		F1B2095127F151E800A8A954 /* TopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTableViewCell.swift; sourceTree = "<group>"; };
+		F1B2095327F1E9D100A8A954 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +73,17 @@
 				F1B2093027EB68B500A8A954 /* AppDelegate.swift */,
 				F1B2093227EB68B500A8A954 /* SceneDelegate.swift */,
 				F1B2093427EB68B500A8A954 /* ViewController.swift */,
+				F1B2094F27F150CA00A8A954 /* TopViewController.swift */,
 				F1B2093627EB68B500A8A954 /* Main.storyboard */,
+				F1B2094B27F12F0C00A8A954 /* TableViewCell.swift */,
+				F1B2095127F151E800A8A954 /* TopTableViewCell.swift */,
 				F1B2093C27EB68B800A8A954 /* Assets.xcassets */,
 				F1B2093E27EB68B800A8A954 /* LaunchScreen.storyboard */,
 				F1B2094127EB68B800A8A954 /* Info.plist */,
 				F1B2093927EB68B500A8A954 /* Challenge.xcdatamodeld */,
 				F1B2094727ECF3A900A8A954 /* Movie.swift */,
+				F1B2095327F1E9D100A8A954 /* User.swift */,
+				F1B2094D27F1454500A8A954 /* Serie.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -146,8 +161,13 @@
 				F1B2093527EB68B500A8A954 /* ViewController.swift in Sources */,
 				F1B2093B27EB68B500A8A954 /* Challenge.xcdatamodeld in Sources */,
 				F1B2093127EB68B500A8A954 /* AppDelegate.swift in Sources */,
+				F1B2094C27F12F0C00A8A954 /* TableViewCell.swift in Sources */,
+				F1B2095027F150CA00A8A954 /* TopViewController.swift in Sources */,
+				F1B2095427F1E9D100A8A954 /* User.swift in Sources */,
+				F1B2094E27F1454500A8A954 /* Serie.swift in Sources */,
 				F1B2093327EB68B500A8A954 /* SceneDelegate.swift in Sources */,
 				F1B2094827ECF3A900A8A954 /* Movie.swift in Sources */,
+				F1B2095227F151E800A8A954 /* TopTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
