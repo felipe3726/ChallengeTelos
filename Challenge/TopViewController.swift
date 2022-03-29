@@ -26,12 +26,15 @@ class TopViewController: UIViewController {
 }
 
 
-extension TopViewController: UITableViewDelegate, UITableViewDataSource, clickDelegate{
+extension TopViewController: UITableViewDelegate, UITableViewDataSource, rentDelegate, favDelegate{
     
-    func didPressButton(myData: String) {
-        self.user.addFav(myData)
+    func didPressRentButton(myData: String) {
+        self.user.addRent(myData)
     }
     
+    func didPressFavButton(myData: String) {
+        self.user.addFav(myData)
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Hello")
@@ -51,7 +54,8 @@ extension TopViewController: UITableViewDelegate, UITableViewDataSource, clickDe
         cell.rankCell.text = array[indexPath.row].Rank
         cell.ratingCell.text = array[indexPath.row].IMDbRating
         cell.titleCell.text = array[indexPath.row].Title
-        cell.delegate = self
+        cell.rentDelegate = self
+        cell.favDelegate = self
         
         return cell
     }

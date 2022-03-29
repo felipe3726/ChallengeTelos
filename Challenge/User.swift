@@ -25,5 +25,6 @@ public class User{
     }
     public func addRent(_ String: String){
         Rented.append(String)
+        print(Rented)
     }
 }

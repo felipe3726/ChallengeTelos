@@ -7,8 +7,12 @@
 
 import UIKit
 
-protocol clickDelegate {
-    func didPressButton(myData: String)
+protocol rentDelegate {
+    func didPressRentButton(myData: String)
+}
+
+protocol favDelegate {
+    func didPressFavButton(myData: String)
 }
 
 class TopTableViewCell: UITableViewCell {
@@ -20,14 +24,20 @@ class TopTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingCell: UILabel!
     @IBOutlet var RentBttn: UIButton!
     @IBOutlet var FavBttn: UIButton!
-    var delegate: clickDelegate?
-    var cellIndex: IndexPath?
-    var indexPath: IndexPath!
+    var rentDelegate: rentDelegate?
+    var favDelegate : favDelegate?
     
     @IBAction func addMovie(_ sender: Any) {
         let data = self.titleCell.text
-        self.delegate?.didPressButton(myData: data!)
+        self.favDelegate?.didPressFavButton(myData: data!)
         }
+    
+    @IBAction func rentMovie(_ sender: Any){
+        let data = self.titleCell.text
+        self.rentDelegate?.didPressRentButton(myData: data!)
+    }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
