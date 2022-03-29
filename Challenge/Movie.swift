@@ -38,7 +38,7 @@ public class Movie {
     public func getData() -> Array<TopMovies>{
         let semaphore = DispatchSemaphore (value: 0)
         var model = [TopMovies]()
-        var request = URLRequest(url: URL(string: "https://imdb-api.com/en/API/MostPopularMovies/k_1jwwmt8u")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://imdb-api.com/en/API/MostPopularMovies/k_6vla0are")!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
          
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -67,12 +67,15 @@ public class Movie {
         return model
     }
     
-    public func Search(_ movie: String) -> (String, String){
+    public func Search(_ movie: String) -> (String, String, URL){
         
         let semaphore = DispatchSemaphore (value: 0)
         var title : String = ""
+        var url : URL =  URL(string: "https://imdb-api.com/images/original/MV5BNzA2ZDk2ZTUtMWU2Yi00NDVmLTk1ODEtMmFmMjQyNWYzODI0XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_Ratio0.7273_AL_.jpg")!
+        var description: String = ""
         var image : String = ""
-        var request = URLRequest(url: URL(string: "https://imdb-api.com/API/Search/k_1jwwmt8u/" + movie)!,timeoutInterval: Double.infinity)
+        
+        var request = URLRequest(url: URL(string: "https://imdb-api.com/API/Search/k_6vla0are/" + movie)!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
          
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -90,8 +93,9 @@ public class Movie {
                 
                 title = jsonArray[0]["title"] as! String
                 image = jsonArray[0]["image"] as! String
+                url = URL(string: image)!
+                description = jsonArray[0]["description"] as! String
                 
-                print(title, image)
             } catch {
                 print(error.localizedDescription)
             }
@@ -100,7 +104,6 @@ public class Movie {
          
         task.resume()
         semaphore.wait()
-        return (title, image)
+        return (title, description, url)
     }
-    
 }

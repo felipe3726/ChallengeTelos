@@ -13,7 +13,17 @@ public class User{
     public var Favorite: Array<String> = []
     
     
-    public func addFav(_ String: String){
-        Favorite.append(String)
+    
+    public func addFav(_ movie: String){
+        self.Favorite.append(movie)
+        print(Favorite)
+    }
+    public func deleteFav(_ String: String){
+        if let index = Favorite.firstIndex(of: String) {
+            Favorite.remove(at: index)
+        }
+    }
+    public func addRent(_ String: String){
+        Rented.append(String)
     }
 }

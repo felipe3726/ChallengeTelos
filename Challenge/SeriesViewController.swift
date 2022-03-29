@@ -12,7 +12,6 @@ class SeriesViewController: UIViewController {
 
     @IBOutlet var SerieTableView : UITableView!
 
-let user = User()
 let series = Serie()
 var array : Array<Serie.TopSeries> = []
 
@@ -38,8 +37,10 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "SeriesCell", for: indexPath) as! SeriesTableViewCell
-
+    let url = URL(string: array[indexPath.row].Image)!
+    let data = try? Data(contentsOf: url)
     
+    cell.imageCell.image = UIImage(data: data!)
     cell.rankCell.text = array[indexPath.row].Rank
     cell.ratingCell.text = array[indexPath.row].IMDbRating
     cell.titleCell.text = array[indexPath.row].Title

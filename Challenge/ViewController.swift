@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     let sections = [
     "Movies",
     "Series",
-    "Cart",
+    "Search",
     "Profile"
     ]
     override func viewDidLoad() {
@@ -32,12 +32,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
-        //performSegue(withIdentifier: "SeriesSegue", sender: self)
-        
         if indexPath.row == 0{
             self.performSegue(withIdentifier: "TopViewSegue", sender: self)
         }else if indexPath.row == 1{
             self.performSegue(withIdentifier: "SeriesSegue", sender: self)
+        }else if indexPath.row == 2{
+            self.performSegue(withIdentifier: "SearchSegue", sender: self)
         }
         
     }

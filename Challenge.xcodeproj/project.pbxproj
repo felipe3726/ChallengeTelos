@@ -22,6 +22,7 @@
 		F1B2095427F1E9D100A8A954 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2095327F1E9D100A8A954 /* User.swift */; };
 		F1B2095627F1EED200A8A954 /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2095527F1EED200A8A954 /* SeriesViewController.swift */; };
 		F1B2095827F2084500A8A954 /* SeriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2095727F2084500A8A954 /* SeriesTableViewCell.swift */; };
+		F1B2095A27F2326100A8A954 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2095927F2326100A8A954 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F1B2095327F1E9D100A8A954 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F1B2095527F1EED200A8A954 /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
 		F1B2095727F2084500A8A954 /* SeriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesTableViewCell.swift; sourceTree = "<group>"; };
+		F1B2095927F2326100A8A954 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				F1B2093027EB68B500A8A954 /* AppDelegate.swift */,
 				F1B2093227EB68B500A8A954 /* SceneDelegate.swift */,
 				F1B2093427EB68B500A8A954 /* ViewController.swift */,
+				F1B2095927F2326100A8A954 /* SearchViewController.swift */,
 				F1B2095527F1EED200A8A954 /* SeriesViewController.swift */,
 				F1B2095727F2084500A8A954 /* SeriesTableViewCell.swift */,
 				F1B2094F27F150CA00A8A954 /* TopViewController.swift */,
@@ -172,6 +175,7 @@
 				F1B2095427F1E9D100A8A954 /* User.swift in Sources */,
 				F1B2094E27F1454500A8A954 /* Serie.swift in Sources */,
 				F1B2093327EB68B500A8A954 /* SceneDelegate.swift in Sources */,
+				F1B2095A27F2326100A8A954 /* SearchViewController.swift in Sources */,
 				F1B2095627F1EED200A8A954 /* SeriesViewController.swift in Sources */,
 				F1B2094827ECF3A900A8A954 /* Movie.swift in Sources */,
 				F1B2095827F2084500A8A954 /* SeriesTableViewCell.swift in Sources */,
