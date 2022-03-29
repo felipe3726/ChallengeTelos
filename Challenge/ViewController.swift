@@ -38,6 +38,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             self.performSegue(withIdentifier: "SeriesSegue", sender: self)
         }else if indexPath.row == 2{
             self.performSegue(withIdentifier: "SearchSegue", sender: self)
+        }else if indexPath.row == 3{
+            self.performSegue(withIdentifier: "UserSegue", sender: self)
         }
         
     }

@@ -13,19 +13,28 @@ class SeriesViewController: UIViewController {
     @IBOutlet var SerieTableView : UITableView!
 
 let series = Serie()
+let user = User()
+    var UserView = UserViewController().c
 var array : Array<Serie.TopSeries> = []
 
 override func viewDidLoad() {
     super.viewDidLoad()
-    
     SerieTableView.delegate = self
     SerieTableView.dataSource = self
-    
     array = series.getData()
 }
 }
 
-extension SeriesViewController: UITableViewDelegate, UITableViewDataSource{
+extension SeriesViewController: UITableViewDelegate, UITableViewDataSource, favDelegate, rentDelegate{
+    func didPressFavButton(myData: String) {
+        self.user.addFav(myData)
+    }
+    
+    func didPressRentButton(myData: String) {
+        self.user.addRent(myData)
+    }
+    
+    
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     print("Hello")
 }
@@ -44,7 +53,8 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     cell.rankCell.text = array[indexPath.row].Rank
     cell.ratingCell.text = array[indexPath.row].IMDbRating
     cell.titleCell.text = array[indexPath.row].Title
-    
+    cell.rentDelegate = self
+    cell.favDelegate = self
     
     return cell
 }

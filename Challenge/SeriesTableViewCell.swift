@@ -13,6 +13,18 @@ class SeriesTableViewCell: UITableViewCell {
     @IBOutlet weak var titleCell: UILabel!
     @IBOutlet weak var rankCell: UILabel!
     @IBOutlet weak var ratingCell: UILabel!
+    var favDelegate: favDelegate?
+    var rentDelegate: rentDelegate?
+    
+    @IBAction func addMovie(_ sender: Any) {
+        let data = self.titleCell.text
+        self.favDelegate?.didPressFavButton(myData: data!)
+        }
+    
+    @IBAction func rentMovie(_ sender: Any){
+        let data = self.titleCell.text
+        self.rentDelegate?.didPressRentButton(myData: data!)
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
