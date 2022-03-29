@@ -1,5 +1,5 @@
 //
-//  FavoriteTableViewCell.swift
+//  SerieFavTableViewCell.swift
 //  Challenge
 //
 //  Created by Felipe Martinez on 29/03/22.
@@ -7,21 +7,10 @@
 
 import UIKit
 
-protocol Mydelegate {
-    func didPressMovieFavButton(myData: String)
-}
-
-class FavoriteTableViewCell: UITableViewCell {
+class SerieFavTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleCell: UILabel!
-    @IBOutlet weak var addBttnCell: UIButton!
-    var delegate: Mydelegate?
-    
-    @IBAction func addMovie(_ sender: Any) {
-        let data = self.titleCell.text
-        self.delegate?.didPressMovieFavButton(myData: data!)
-        }
-    
+    @IBOutlet weak var button: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

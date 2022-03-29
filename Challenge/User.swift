@@ -9,7 +9,7 @@ import Foundation
 
 
 public class User{
-    public var Rented: Array<String> = []
+    public var Rented: Array<String> = [""]
     public var Favorite: Array<String> = [""]
     
     public func getElement(_ index: Int)->String{
@@ -17,7 +17,6 @@ public class User{
     }
     
     public func addFav(_ movie: String)->Array<String>{
-        //self.Favorite.append(movie)
         self.Favorite.insert(movie, at: 0)
         print(Favorite)
         return Favorite
@@ -27,9 +26,9 @@ public class User{
             Favorite.remove(at: index)
         }
     }
-    public func addRent(_ String: String){
-        //Rented.append(String)
-        self.Favorite.insert(String, at: 0)
+    public func addRent(_ String: String)->Array<String>{
+        self.Rented.insert(String, at: 0)
         print(Rented)
+        return Rented
     }
 }

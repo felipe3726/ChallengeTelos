@@ -31,19 +31,29 @@ class TopViewController: UIViewController {
 }
 
 
-extension TopViewController: UITableViewDelegate, UITableViewDataSource, favDelegate, rentDelegate, delegate{
+extension TopViewController: UITableViewDelegate, UITableViewDataSource, favDelegate, rentDelegate, Mydelegate{
+    
+    func didPressMovieFavButton(myData: String) {
+        self.user.deleteFav(myData)
+        FavTableView.reloadData()
+    }
     
     func didPressFavButton(myData: String) {
         self.user.addFav(myData)
+        FavTableView.reloadData()
     }
     
     func didPressRentButton(myData: String) {
         self.user.addRent(myData)
+        CartTableView.reloadData()
     }
+    
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Hello")
-        tableView.reloadData()
+        FavTableView.reloadData()
+        CartTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,6 +61,8 @@ extension TopViewController: UITableViewDelegate, UITableViewDataSource, favDele
             return array.count
         }else if tableView == FavTableView{
             return user.Favorite.count
+        }else if tableView == CartTableView{
+            return user.Rented.count
         }
         return Int()
     }
@@ -75,6 +87,12 @@ extension TopViewController: UITableViewDelegate, UITableViewDataSource, favDele
             
             cell.titleCell.text = user.Favorite[indexPath.row]
             cell.delegate = self
+            
+            return cell
+        }else if tableView == CartTableView{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCart", for: indexPath) as! MovieCartTableViewCell
+            
+            cell.label.text = user.Rented[indexPath.row]
             
             return cell
         }

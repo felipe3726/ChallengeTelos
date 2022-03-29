@@ -1,5 +1,5 @@
 //
-//  FavTableViewCell.swift
+//  SerieRentTableViewCell.swift
 //  Challenge
 //
 //  Created by Felipe Martinez on 29/03/22.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class FavTableViewCell: UITableViewCell {
+class SerieRentTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var favMovie : UILabel!
+    @IBOutlet weak var label: UILabel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
